@@ -8,15 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
-@protocol CollectionViewCellDelegate <NSObject>
-
-- (void)collectionViewCell:(id)cell onImageTapped:(UIImageView *)image;
-
-@end
+//@protocol CollectionViewCellDelegate <NSObject>
+//
+//- (void)collectionViewCell:(id)cell onImageTapped:(UIImageView *)image;
+//
+//@end
 
 @interface PictureCollectionViewCell : UICollectionViewCell
 @property (weak, nonatomic) IBOutlet UIImageView *photoImageView;
-@property (nonatomic,assign) id <CollectionViewCellDelegate>delegate;
+//@property (nonatomic,assign) id <CollectionViewCellDelegate>delegate;
 
 
 @end

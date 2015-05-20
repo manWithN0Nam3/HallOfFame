@@ -11,18 +11,25 @@
 #import "PictureCollectionViewCell.h"
 #import "CustomView.h"
 
-@interface ViewController ()<UICollectionViewDelegate, UICollectionViewDataSource>
+@interface ViewController () <UICollectionViewDelegate, UICollectionViewDataSource, CustomViewDelegate>
 //hellllldskfdjsk;fkls
+@property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 
 @property NSMutableArray* array;
 
 @property CustomView *custom;
+
+@property PictureCollectionViewCell *cell;
+@property NSIndexPath *indexPath;
 @end
 
 @implementation ViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.custom = [[[NSBundle mainBundle] loadNibNamed:@"View" owner:self options:nil] objectAtIndex:0];
+    self.custom.delegate = self;
+
     // Do any additional setup after loading the view, typically from a nib.
 
     Picture *picture = [[Picture alloc]initWithPicture:[UIImage imageNamed:@"nicCage"] andBackgroundColor:[UIColor orangeColor]];
@@ -48,23 +55,56 @@
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
 
 
-    PictureCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"pictureCell" forIndexPath:indexPath];
+    self.cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"pictureCell" forIndexPath:indexPath];
 
     Picture *picture = [self.array objectAtIndex:indexPath.row];
 
-    cell.photoImageView.image = picture.image;
-    cell.backgroundColor = picture.backgroundColor;
+    self.cell.photoImageView.image = picture.image;
+    self.cell.backgroundColor = picture.backgroundColor;
     
-    return cell;
+    return self.cell;
 }
 
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
 
     NSLog(@"hsahdhsahads");
 
-    self.custom = [[[NSBundle mainBundle] loadNibNamed:@"View" owner:self options:nil] objectAtIndex:0];
+//    self.custom = [[[NSBundle mainBundle] loadNibNamed:@"View" owner:self options:nil] objectAtIndex:0];
+//    self.custom.delegate = self;
     [self.view addSubview:self.custom];
+    self.indexPath = indexPath;
 
 }
+
+-(void)customView:(id)cell onButtonTapped:(UIButton *)button {
+
+
+
+        NSLog(@"helllooooooo");
+        Picture *picture =  self.array[self.indexPath.row];
+    
+            picture.backgroundColor = button.backgroundColor;
+    
+        [self.custom removeFromSuperview];
+        [self.collectionView reloadData];
+    
+    
+
+//
+//    if ([button.titleLabel.text isEqualToString:@"red"]) {
+//
+//
+//    }
+//    else if ([button.titleLabel.text isEqualToString:@"blue"]){
+//        self.cell.backgroundColor = [UIColor blueColor];
+//
+//    }else if ([button.titleLabel.text isEqualToString:@"green"]){
+//
+//        self.cell.backgroundColor = [UIColor greenColor];
+//    }
+
+
+}
+
 
 @end

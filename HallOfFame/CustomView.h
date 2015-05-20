@@ -7,8 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PictureCollectionViewCell.h"
 
+@protocol CustomViewDelegate <NSObject>
+
+-(void)customView:(id)cell onButtonTapped:(UIButton *)button;
+
+@end
 
 @interface CustomView : UIView
+
+@property (nonatomic,assign) id <CustomViewDelegate> delegate;
 
 @end
