@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1F84A52C1B0D1ECC00644AAD /* View.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1F84A52B1B0D1ECC00644AAD /* View.xib */; };
+		1F84A52F1B0D1F3600644AAD /* CustomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F84A52E1B0D1F3600644AAD /* CustomView.m */; };
 		97FBE6D21B0D0DA200A291D4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 97FBE6D11B0D0DA200A291D4 /* main.m */; };
 		97FBE6D51B0D0DA200A291D4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 97FBE6D41B0D0DA200A291D4 /* AppDelegate.m */; };
 		97FBE6D81B0D0DA200A291D4 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 97FBE6D71B0D0DA200A291D4 /* ViewController.m */; };
@@ -29,6 +31,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1F84A52B1B0D1ECC00644AAD /* View.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = View.xib; sourceTree = "<group>"; };
+		1F84A52D1B0D1F3600644AAD /* CustomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomView.h; sourceTree = "<group>"; };
+		1F84A52E1B0D1F3600644AAD /* CustomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomView.m; sourceTree = "<group>"; };
 		97FBE6CC1B0D0DA200A291D4 /* HallOfFame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HallOfFame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		97FBE6D01B0D0DA200A291D4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		97FBE6D11B0D0DA200A291D4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -97,6 +102,9 @@
 				97FBE6F81B0D183E00A291D4 /* PictureCollectionViewCell.h */,
 				97FBE6F91B0D183E00A291D4 /* PictureCollectionViewCell.m */,
 				97FBE6DC1B0D0DA200A291D4 /* Images.xcassets */,
+				1F84A52B1B0D1ECC00644AAD /* View.xib */,
+				1F84A52D1B0D1F3600644AAD /* CustomView.h */,
+				1F84A52E1B0D1F3600644AAD /* CustomView.m */,
 				97FBE6DE1B0D0DA200A291D4 /* LaunchScreen.xib */,
 				97FBE6CF1B0D0DA200A291D4 /* Supporting Files */,
 			);
@@ -209,6 +217,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1F84A52C1B0D1ECC00644AAD /* View.xib in Resources */,
 				97FBE6DB1B0D0DA200A291D4 /* Main.storyboard in Resources */,
 				97FBE6E01B0D0DA200A291D4 /* LaunchScreen.xib in Resources */,
 				97FBE6DD1B0D0DA200A291D4 /* Images.xcassets in Resources */,
@@ -234,6 +243,7 @@
 				97FBE6D51B0D0DA200A291D4 /* AppDelegate.m in Sources */,
 				97FBE6F71B0D111E00A291D4 /* Picture.m in Sources */,
 				97FBE6D21B0D0DA200A291D4 /* main.m in Sources */,
+				1F84A52F1B0D1F3600644AAD /* CustomView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -428,6 +438,7 @@
 				97FBE6F11B0D0DA300A291D4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		97FBE6F21B0D0DA300A291D4 /* Build configuration list for PBXNativeTarget "HallOfFameTests" */ = {
 			isa = XCConfigurationList;
@@ -436,6 +447,7 @@
 				97FBE6F41B0D0DA300A291D4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
