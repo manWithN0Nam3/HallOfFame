@@ -9,11 +9,14 @@
 #import "ViewController.h"
 #import "Picture.h"
 #import "PictureCollectionViewCell.h"
+#import "CustomView.h"
 
 @interface ViewController ()<UICollectionViewDelegate, UICollectionViewDataSource>
 //hellllldskfdjsk;fkls
 
 @property NSMutableArray* array;
+
+@property CustomView *custom;
 @end
 
 @implementation ViewController
@@ -54,4 +57,14 @@
     
     return cell;
 }
+
+-(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+
+    NSLog(@"hsahdhsahads");
+
+    self.custom = [[[NSBundle mainBundle] loadNibNamed:@"View" owner:self options:nil] objectAtIndex:0];
+    [self.view addSubview:self.custom];
+
+}
+
 @end
